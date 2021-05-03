@@ -1,5 +1,7 @@
+import { CartoonService } from './../services/cartoon.service';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
+import { Cartoon } from '../services/cartoon.model';
 
 @Component({
   selector: 'app-cartoons',
@@ -8,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartoonsComponent implements OnInit {
 
-  constructor(private title: Title) { }
+  cartoons: Cartoon[];
+
+  constructor(private title: Title, private cartoonService: CartoonService) { }
 
   ngOnInit(): void {
     this.title.setTitle('Catoons');
+    // tslint:disable-next-line: deprecation
+    this.cartoonService.getCatoon().subscribe(
+      (cartoons) => {
+        // console.log(cartoons);
+        this.cartoons = cartoons; // cartoon => from back-end , this.cartoons => Local variables
+      }
+    );
   }
 
 }

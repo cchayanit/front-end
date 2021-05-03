@@ -1,4 +1,4 @@
-<main role="main">
+<!--<main role="main">
 
   <div class="album py-5 bg-light">
     <div class="container">
@@ -56,3 +56,39 @@
     </div>
   </div>
 </main>
+-->
+
+<section class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">TITLE</th>
+            <th scope="col">PROTAGONIST</th>
+            <th scope="col">DETAIL</th>
+            <th scope="col">ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let c of cartoons">
+            <td>{{c.title}}</td>
+            <td>{{c.protagonist}}</td>
+            <td>{{c.detail}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-info">View</button>
+                <button type="button" class="btn btn-info">Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</section>
