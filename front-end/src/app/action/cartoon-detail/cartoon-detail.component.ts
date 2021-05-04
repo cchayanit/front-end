@@ -22,18 +22,15 @@ export class CartoonDetailComponent implements OnInit {
     private router: Router
   ) { }
 
-    ngOnInit() {
-    this.id = +this.route.snapshot.params.id;
-    this.cartoonservice.getCartoons(this.id)
-    .subscribe(cartoons => {
-      console.log(cartoons);
-      this.cartoon = cartoons;
-    }, error => console.log(error));
+    ngOnInit(): void {
+      this.id = this.route.snapshot.params.id;
 
+      // tslint:disable-next-line: deprecation
+      this.cartoonService.getCartoonID(this.id).subscribe((data: Cartoon) => {
+        this.cartoon = data;
+      });
     }
-  list(){
-    this.router.navigate(['cartoons']);
-  }
-
-
-}
+    list(){
+      this.router.navigate(['cartoons']);
+    }
+    }

@@ -1,2 +1,27 @@
-<p>cartoon-detail works!</p>
+<section class = "container">
+  <div class="row">
+    <div class="col-lg-12 mx-auto">
+      <h2>Cartoon Details</h2>
+      <hr/>
+
+      <div *ngIf = "cartoon">
+      <div>
+        <label>
+          <strong>TITLE:</strong>
+          <b>{{cartoon.title}}</b>
+        </label>
+      </div>
+      <div>
+        <label><b>Protagonist:{{cartoon.protagonist}}</b></label>
+      </div>
+      <div>
+        <label><b>Detail:{{cartoon.detail}}</b></label>
+      </div>
+    </div>
+    <br>
+
+      <button (click)="list()" type="button" class="btn btn-secondary">Back</button>
+    </div>
+  </div>
+</section>
 

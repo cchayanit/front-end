@@ -51,7 +51,7 @@ export class CartoonsComponent implements OnInit {
   }
 
   details(id: number){
-    this.router.navigate(['details', id]);
+    this.router.navigate(['cartoons', id]);
   }
 
 
