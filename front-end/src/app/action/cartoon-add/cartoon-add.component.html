@@ -1,0 +1,38 @@
+<div class="container col-md-7">
+  <div class="card">
+    <div class="card-header">
+      <h3>ADD CARTOON INFOMATION</h3>
+    </div>
+
+    <form #cartoonFrom = "ngForm" (submit)= "SubmitAdd (cartoonFrom)" class="needs-validation" novalidate>
+
+    <div class="form-group">
+      <label for="title" class="col-form-label">Title</label>
+      <input [ngClass]="{'is-invalid': title.invalid && (title.dirty || title.touched)}" #title="ngModel" ngModel name="title" type="text" class="form-control" id="tille" required>
+      <div class="invalid-feedback">
+        <span> ***</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="protagonist" class="col-form-label">Protagonist</label>
+      <input  [ngClass]="{'is-invalid': protagonist.invalid && (protagonist.dirty || protagonist.touched)}" #protagonist ="ngModel" ngModel name="protagonist" type="text" class="form-control" id="protagonist" required>
+      <div class="invalid-feedback">
+        <span>***</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="detail" class="col-form-label">Detail</label>
+      <input [ngClass]="{'is-invalid': detail.invalid && (detail.dirty || detail.touched)}" #detail="ngModel" ngModel name="detail" type="text" class="form-control" id="detail" required>
+      <div class="invalid-feedback">
+        <span>***</span>
+      </div>
+    </div>
+
+          <button class="btn btn-secondary" type="submit">Add movie</button>
+
+   </form>
+  </div>
+</div>
+

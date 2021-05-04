@@ -59,6 +59,10 @@
 -->
 
 <section class="container">
+  <div class="container">
+    <h1><b><font size="5">CARTOONS INFORMATION</font></b></h1>
+  </div>
+  <div (click)="Add()" class="btn btn-secondary btn-lg btn-block" routerLink="/Add">Add movie</div>
   <div class="row">
     <div class="col-lg-12">
 
@@ -79,16 +83,14 @@
             <td>{{c.detail}}</td>
             <td>
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-info">View</button>
-                <button type="button" class="btn btn-info">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-info" (click)="details(cartoon.id)">View</button>
+                <button type="button" class="btn btn-info" (click)="edit(c)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="delete(cartoon)">Delete</button>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-
-
     </div>
   </div>
-</section>
+ </section>

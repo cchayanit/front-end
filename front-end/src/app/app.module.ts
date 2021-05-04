@@ -9,6 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CartoonsComponent } from './cartoons/cartoons.component';
+import { CartoonDetailComponent } from './action/cartoon-detail/cartoon-detail.component';
+import { CartoonAddComponent } from './action/cartoon-add/cartoon-add.component';
+import { CartoonEditComponent } from './action/cartoon-edit/cartoon-edit.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +22,16 @@ import { CartoonsComponent } from './cartoons/cartoons.component';
     HomeComponent,
     LogInComponent,
     SignUpComponent,
-    CartoonsComponent
+    CartoonsComponent,
+    CartoonDetailComponent,
+    CartoonAddComponent,
+    CartoonEditComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

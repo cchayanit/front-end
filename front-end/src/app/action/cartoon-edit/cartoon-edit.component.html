@@ -1,0 +1,28 @@
+<section class = "container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto">
+      <h2>Edit Cartoon</h2>
+
+      <form >
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input [(ngModel)]="cartoon.title" type="title" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+          <label for="protagonist">Protagonist</label>
+          <input [(ngModel)]="cartoon.protagonist" type="protagonist" class="form-control" name="protagonist">
+        </div>
+        <div class="form-group">
+          <label for="detail">Detail</label>
+          <input [(ngModel)]="cartoon.detail" type="detail" class="form-control" name="detail">
+        </div>
+
+        <button (click)="Update(cartoon)"  class="btn btn-primary">Update</button>
+
+      </form>
+
+
+    </div>
+  </div>
+</section>

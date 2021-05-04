@@ -2,6 +2,8 @@ import { CartoonService } from './../services/cartoon.service';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { Cartoon } from '../services/cartoon.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cartoons',
@@ -10,19 +12,48 @@ import { Cartoon } from '../services/cartoon.model';
 })
 export class CartoonsComponent implements OnInit {
 
+  [x: string]: any;
+
   cartoons: Cartoon[];
 
-  constructor(private title: Title, private cartoonService: CartoonService) { }
+  constructor(private title: Title, private cartoonService: CartoonService, private router: Router) { }
+
+  Add(){
+    this.router.navigate(['add']);
+  }
 
   ngOnInit(): void {
     this.title.setTitle('Catoons');
     // tslint:disable-next-line: deprecation
-    this.cartoonService.getCatoon().subscribe(
+    this.cartoonService.getCartoon().subscribe(
       (cartoons) => {
-        // console.log(cartoons);
-        this.cartoons = cartoons; // cartoon => from back-end , this.cartoons => Local variables
+        this.cartoons = cartoons; // cartoon => from back-end
       }
     );
   }
 
+  reloadData() {
+    this.cartoons = this.cartoonService.getCartoons();
+  }
+
+  delete(cartoon: Cartoon): void {
+    // tslint:disable-next-line: deprecation
+    this.cartoonService.deleteCartoon(cartoon).subscribe
+    (cartoons => {
+      this.cartoons = this.cartoons.filter(p => p !== cartoon);
+      alert('Completely deleted');
+    });
+  }
+
+  edit(c: Cartoon): void{
+    localStorage.setItem('id', c . id .toString());
+    this.router.navigate(['edit']);
+  }
+
+  details(id: number){
+    this.router.navigate(['details', id]);
+  }
+
+
 }
+
