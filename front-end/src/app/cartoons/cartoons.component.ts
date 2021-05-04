@@ -36,11 +36,11 @@ export class CartoonsComponent implements OnInit {
     this.cartoons = this.cartoonService.getCartoons();
   }
 
-  delete(cartoon: Cartoon): void {
+  delete(c: Cartoon): void {
     // tslint:disable-next-line: deprecation
-    this.cartoonService.deleteCartoon(cartoon).subscribe
+    this.cartoonService.deleteCartoon(c).subscribe
     (cartoons => {
-      this.cartoons = this.cartoons.filter(p => p !== cartoon);
+      this.cartoons = this.cartoons.filter(p => p !== c);
       alert('Completely deleted');
     });
   }
