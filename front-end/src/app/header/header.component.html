@@ -8,13 +8,28 @@
       <li class="nav-item ">
         <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home <span class="sr-only">(current)</span></a>
       </li>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cartoons" routerLinkActive="active">cartoons</a>
+        </li>
+      </ul>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <form class="form-inline mt-2 mt-md-0">
+        <button type="button"  class="btn btn-dark" routerLink= "/log-in">Login</button>
+        <button type="button" class="btn btn-light" routerLink= "/sign-up">Sign-up</button>
+      </form>
+    </ul>>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/cartoons" routerLinkActive="active">cartoons</a>
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0">
-      <button type="button"  class="btn btn-dark" routerLink= "/log-in">Login</button>
-      <button type="button" class="btn btn-light" routerLink= "/sign-up">Sign-up</button>
-    </form>
+
   </div>
 </nav>
