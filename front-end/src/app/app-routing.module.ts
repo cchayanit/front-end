@@ -1,3 +1,4 @@
+import { ProfileComponent } from './profile/profile.component';
 import { CartoonEditComponent } from './action/cartoon-edit/cartoon-edit.component';
 import { CartoonAddComponent } from './action/cartoon-add/cartoon-add.component';
 import { CartoonDetailComponent } from './action/cartoon-detail/cartoon-detail.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'cartoons/:id', component: CartoonDetailComponent},
   {path: 'add', component: CartoonAddComponent},
-  {path: 'edit', component: CartoonEditComponent}
+  {path: 'edit', component: CartoonEditComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

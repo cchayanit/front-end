@@ -13,6 +13,8 @@ import { CartoonDetailComponent } from './action/cartoon-detail/cartoon-detail.c
 import { CartoonAddComponent } from './action/cartoon-add/cartoon-add.component';
 import { CartoonEditComponent } from './action/cartoon-edit/cartoon-edit.component';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     CartoonsComponent,
     CartoonDetailComponent,
     CartoonAddComponent,
-    CartoonEditComponent
+    CartoonEditComponent,
+    ProfileComponent
+
   ],
   imports: [
     BrowserModule,
