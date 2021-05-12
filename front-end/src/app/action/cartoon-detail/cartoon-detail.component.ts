@@ -28,6 +28,7 @@ export class CartoonDetailComponent implements OnInit {
       // tslint:disable-next-line: deprecation
       this.cartoonService.getCartoonID(this.id).subscribe((data: Cartoon) => {
         this.cartoon = data;
+        console.log(this.cartoon);
       });
     }
     list(){

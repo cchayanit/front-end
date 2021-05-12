@@ -22,15 +22,13 @@ export class CartoonEditComponent implements OnInit {
   edit(Cartoon){
     const id: string = localStorage.getItem('id');
     this.cartoonService.getCartoonID(+id)
-    // tslint:disable-next-line: deprecation
-    .subscribe(data => {
+      .subscribe(data => {
       this.cartoon = data;
     });
   }
   Update(cartoon: Cartoon){
     this.cartoonService.updateCartoon(cartoon)
-    // tslint:disable-next-line: deprecation
-    .subscribe(data => {
+      .subscribe(data => {
       this.cartoon = data;
       alert('Completely edited');
       this.router.navigate(['cartoons']);

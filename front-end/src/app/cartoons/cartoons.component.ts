@@ -16,6 +16,7 @@ export class CartoonsComponent implements OnInit {
 
   cartoons: Cartoon[];
 
+
   constructor(private title: Title, private cartoonService: CartoonService, private router: Router) { }
 
   Add(){
@@ -28,6 +29,7 @@ export class CartoonsComponent implements OnInit {
     this.cartoonService.getCartoon().subscribe(
       (cartoons) => {
         this.cartoons = cartoons; // cartoon => from back-end
+        console.log(this.cartoons);
       }
     );
   }
@@ -48,6 +50,7 @@ export class CartoonsComponent implements OnInit {
   edit(c: Cartoon): void{
     localStorage.setItem('id', c . id .toString());
     this.router.navigate(['edit']);
+    console.log(localStorage);
   }
 
   details(id: number){

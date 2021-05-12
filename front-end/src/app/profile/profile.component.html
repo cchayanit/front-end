@@ -19,7 +19,13 @@
       {{ role }}
     </li>
   </ul>
+
+  <button (click)="edit(currentUser.id)"  class="btn btn-primary">edit profile</button>
+
 </div>
+
+
+
 
 <ng-template #loggedOut>
   Please login.

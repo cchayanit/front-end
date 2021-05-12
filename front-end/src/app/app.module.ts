@@ -14,6 +14,7 @@ import { CartoonAddComponent } from './action/cartoon-add/cartoon-add.component'
 import { CartoonEditComponent } from './action/cartoon-edit/cartoon-edit.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { ProfileEditComponent } from './action/profile-edit/profile-edit.component';
 
 
 
@@ -28,7 +29,8 @@ import { ProfileComponent } from './profile/profile.component';
     CartoonDetailComponent,
     CartoonAddComponent,
     CartoonEditComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfileEditComponent
 
   ],
   imports: [
