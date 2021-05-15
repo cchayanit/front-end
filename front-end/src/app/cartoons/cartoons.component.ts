@@ -25,7 +25,6 @@ export class CartoonsComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle('Catoons');
-    // tslint:disable-next-line: deprecation
     this.cartoonService.getCartoon().subscribe(
       (cartoons) => {
         this.cartoons = cartoons; // cartoon => from back-end
@@ -39,7 +38,6 @@ export class CartoonsComponent implements OnInit {
   }
 
   delete(c: Cartoon): void {
-    // tslint:disable-next-line: deprecation
     this.cartoonService.deleteCartoon(c).subscribe
     (cartoons => {
       this.cartoons = this.cartoons.filter(p => p !== c);
