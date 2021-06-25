@@ -34,10 +34,10 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  /*reloadData() {
-    this.profiles = this.profileService.getProfiles();
-    console.log(this.profiles);
-  }*/
+  // reloadData() {
+  //   this.profiles = this.profileService.getProfiles();
+  //   console.log(this.profiles);
+  // }
 
   edit( ): void{
     this.router.navigate(['profile-edit']);
